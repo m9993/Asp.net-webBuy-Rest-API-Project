@@ -7,7 +7,7 @@ namespace webBuy_with_Rest_API.Models
     {
         public int reviewId { get; set; }
         public int productId { get; set; }
-        public string review1 { get; set; }
+        public string review { get; set; }
         public Nullable<int> rating { get; set; }
         public int userId { get; set; }
     }

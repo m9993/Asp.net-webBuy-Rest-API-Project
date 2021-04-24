@@ -24,7 +24,7 @@ namespace webBuy_with_Rest_API.Models
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<webBuyEntities>());
 
             //For Migration
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<webBuyEntities, webBuy_with_Rest_API.Migrations.Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<webBuyEntities, webBuy_with_Rest_API.Migrations.Configuration>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
