@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using webBuy_with_Rest_API.Attributes;
 using webBuy_with_Rest_API.Models;
 using webBuy_with_Rest_API.Repositories;
 
@@ -14,12 +15,10 @@ namespace webBuy_with_Rest_API.Controllers
     {
         UserRepository userRepository = new UserRepository();
 
-        [Route(""), HttpGet]
-        public IHttpActionResult Get()
+        [Route(""), HttpGet, BasicAuthentication]
+        public IHttpActionResult Login([FromBody] User user)
         {
-            var loginUser = userRepository.GetAll();
-            return StatusCode(HttpStatusCode.NoContent);
-
+            return Ok(userRepository.VerifyLogin(user.email,user.password));
         }
     }
 }

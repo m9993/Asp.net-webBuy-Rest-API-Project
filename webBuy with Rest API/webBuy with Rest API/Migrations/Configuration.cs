@@ -115,8 +115,8 @@
             {
                 new Product(){name="Perfume 5b", shopId=1, unitPrice=1400, quantity=20, date="10-Mar-21 10:15:47 PM", image="1.jpg", productStatus=0, categoryId=1},
                 new Product(){name="Hand Watch 1c", shopId=2, unitPrice=450, quantity=25, date="10-Mar-21 10:15:47 PM", image="2.jpg", productStatus=1, categoryId=2},
-                new Product(){name="HeadPhone 1e", shopId=4, unitPrice=900, quantity=9, date="10-Mar-21 10:15:47 PM", image="3.jpg", productStatus=1, categoryId=3},
-                new Product(){name="Rubics (red)", shopId=5, unitPrice=200, quantity=21, date="10-Mar-21 10:15:47 PM", image="4.jpg", productStatus=1, categoryId=4},
+                new Product(){name="HeadPhone 1e", shopId=3, unitPrice=900, quantity=9, date="10-Mar-21 10:15:47 PM", image="3.jpg", productStatus=1, categoryId=3},
+                new Product(){name="Rubics (red)", shopId=4, unitPrice=200, quantity=21, date="10-Mar-21 10:15:47 PM", image="4.jpg", productStatus=1, categoryId=4},
             };
             if (!context.Products.Any())
             {
@@ -199,7 +199,7 @@
             //Withdraw
             List<Withdraw> withdraws = new List<Withdraw>()
             {
-                new Withdraw(){userId=1003, amount=9000, shopId=2},
+                new Withdraw(){userId=1003, amount=9000, shopId=null},
                 new Withdraw(){userId=1004, amount=400, shopId=2},
                 new Withdraw(){userId=1004, amount=40, shopId=2},
                 new Withdraw(){userId=1004, amount=50, shopId=2},

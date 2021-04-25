@@ -95,6 +95,7 @@ C:\Users\Muntasir Alam\Desktop\Asp.net-webBuy-Rest-API-Project\webBuy with Rest 
 C:\Users\Muntasir Alam\Desktop\Asp.net-webBuy-Rest-API-Project\webBuy with Rest API\webBuy with Rest API\bin\System.Web.Http.xml
 C:\Users\Muntasir Alam\Desktop\Asp.net-webBuy-Rest-API-Project\webBuy with Rest API\webBuy with Rest API\bin\System.Web.Http.WebHost.xml
 C:\Users\Muntasir Alam\Desktop\Asp.net-webBuy-Rest-API-Project\webBuy with Rest API\webBuy with Rest API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Muntasir Alam\Desktop\Asp.net-webBuy-Rest-API-Project\webBuy with Rest API\webBuy with Rest API\obj\Debug\webBuy with Rest API.csprojAssemblyReference.cache
 C:\Users\Muntasir Alam\Desktop\Asp.net-webBuy-Rest-API-Project\webBuy with Rest API\webBuy with Rest API\obj\Debug\webBuy with Rest API.csproj.CoreCompileInputs.cache
 C:\Users\Muntasir Alam\Desktop\Asp.net-webBuy-Rest-API-Project\webBuy with Rest API\webBuy with Rest API\obj\Debug\webBuy with Rest API.csproj.CopyComplete
 C:\Users\Muntasir Alam\Desktop\Asp.net-webBuy-Rest-API-Project\webBuy with Rest API\webBuy with Rest API\obj\Debug\webBuy with Rest API.dll
