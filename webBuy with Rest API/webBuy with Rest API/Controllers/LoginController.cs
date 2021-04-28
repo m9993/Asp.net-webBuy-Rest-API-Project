@@ -16,9 +16,9 @@ namespace webBuy_with_Rest_API.Controllers
         UserRepository userRepository = new UserRepository();
 
         [Route(""), HttpGet, BasicAuthentication]
-        public IHttpActionResult Login([FromBody] User user)
+        public IHttpActionResult Login([FromUri] string email, [FromUri] string password)
         {
-            return Ok(userRepository.VerifyLogin(user.email,user.password));
+            return Ok(userRepository.VerifyLogin(email,password));
         }
     }
 }

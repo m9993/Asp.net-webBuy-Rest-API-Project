@@ -336,15 +336,8 @@ namespace webBuy_with_Rest_API.Controllers
         [Route("CategoryAdd"), HttpPost]
         public IHttpActionResult CategoryAdd(Category category)
         {
-            if (!ModelState.IsValid)
-            {
-                return StatusCode(HttpStatusCode.BadRequest);
-            }
-            else
-            {
-                categoryRepository.Insert(category);
-                return StatusCode(HttpStatusCode.OK);
-            }
+            categoryRepository.Insert(category);
+            return StatusCode(HttpStatusCode.OK);
         }
 
 
