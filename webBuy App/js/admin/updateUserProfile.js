@@ -48,6 +48,7 @@ $(document).ready(()=>{
                     $("#error-msg").addClass("alert-warning");
                     $("#error-msg").html(xmlHttp.status+":"+xmlHttp.statusText);
                 }
+                $('#UpdateUserProfile .close').click();
             }
         });    
     });

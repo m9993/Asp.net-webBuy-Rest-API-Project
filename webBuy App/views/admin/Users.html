@@ -1,72 +1,118 @@
-﻿@model IEnumerable<webBuy.Models.User>
-
-@{
-    ViewBag.Title = "Users";
-    Layout = "~/Views/Shared/_adminLayout.cshtml";
-}
-
+﻿
 <h5>Users</h5>
 
 <p class="mb-2 float-right h6">
-    <a href="GetAllUsers" class="mx-2"><i class="fas fa-users"></i> All Users</a> |
-    <a href="GetBannedUsers" class="mx-2"><i class="fas fa-user-slash"></i> Banned Users</a>
+    <a href="#" id='viewAllUsers' class="mx-2"><i class="fas fa-users"></i> All Users</a> |
+    <a href="#" id='viewBannedUsers' class="mx-2"><i class="fas fa-user-slash"></i> Banned Users</a>
 </p>
-<table class="table">
+<table class="table table-hover table-dark">
+    <thead>
     <tr>
-        <th>
+        <th scope="col">
             Email
         </th>
-        <th>
+        <th scope="col">
             Name
         </th>
-        <th>
+        <th scope="col">
             Phone
         </th>
-        <th>
+        <th scope="col">
             Address
         </th>
-        <th>
+        <th scope="col">
             Role
         </th>
-        <th>
+        <th scope="col">
             Status
         </th>
-        <th>
+        <th scope="col"> 
             Action
         </th>
     </tr>
+</thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.role)
-        </td>
-        <td>
-            @if (item.userStatus==0) {<text>Banned</text>}else { <text>Unbaned</text>}
-        </td>
-        <td>
-            @if (item.userStatus == 1)
-            {
-                <text><a class="text-success h4 mx-1" href="/Admin/BanUser/@item.userId"><i class="fas fa-check-circle"></i></a> </text>
-            }
-            else
-            {
-                <text><a class="text-danger h4 mx-1" href="/Admin/UnbanUser/@item.userId"><i class="fas fa-ban"></i></a></text>
-            }
-        </td>
-    </tr>
-}
+    <tbody id="tbody">
+    </tbody>
 
 </table>
+
+
+<script type="text/javascript">
+    function banUser(id){
+        $.ajax({
+            url:"http://localhost:59162/api/admin/BanUser/"+id+"",
+            method:"put",
+            data:{
+            },
+            complete:(xmlHttp,status)=>{
+                if(xmlHttp.status==200)
+                {
+                    $("#title").html("All Users");
+                    $("#body").load("../admin/Users.html");
+                    $('<script>').attr({
+                        src: '../../js/admin/getAllUsers.js',
+                        type: 'text/javascript'}).appendTo('body');
+
+                    $("#error-msg").addClass("alert-warning");
+                    $("#error-msg").html(" User Banned");
+                }
+                else
+                {
+                    $("#error-msg").addClass("alert-warning");
+                    $("#error-msg").html(xmlHttp.status+":"+xmlHttp.statusText);
+                }
+            }
+        });    
+    };
+
+
+    function unbanUser(id){
+        $.ajax({
+            url:"http://localhost:59162/api/admin/UnbanUser/"+id+"",
+            method:"put",
+            data:{
+            },
+            complete:(xmlHttp,status)=>{
+                if(xmlHttp.status==200)
+                {
+                    $("#title").html("All Users");
+                    $("#body").load("../admin/Users.html");
+                    $('<script>').attr({
+                        src: '../../js/admin/getAllUsers.js',
+                        type: 'text/javascript'}).appendTo('body');
+                        
+                    $("#error-msg").addClass("alert-success");
+                    $("#error-msg").html("User unbaned");
+                }
+                else
+                {
+                    $("#error-msg").addClass("alert-warning");
+                    $("#error-msg").html(xmlHttp.status+":"+xmlHttp.statusText);
+                }
+            }
+        });        
+    };
+
+
+
+
+    // 
+    $(document).ready(function(){
+        $("#viewBannedUsers").click(()=>{
+                $("#title").html("Banned Users");
+                $("#body").load("../admin/Users.html");
+                $('<script>').attr({
+                    src: '../../js/admin/getBannedUsers.js',
+                    type: 'text/javascript'}).appendTo('body');
+        });
+        $("#viewAllUsers").click(()=>{
+                $("#title").html("All Users");
+                $("#body").load("../admin/Users.html");
+                $('<script>').attr({
+                    src: '../../js/admin/getAllUsers.js',
+                    type: 'text/javascript'}).appendTo('body');
+        });
+    });
+    // 
+</script>

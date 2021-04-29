@@ -1,70 +1,81 @@
-﻿<h5>Update User Profile</h5>
-
-    <div class="form-horizontal">
+﻿<div class="modal fade" id="UpdateUserProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <h5 class="modal-title" id="exampleModalLabel">Update User Profile</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body bg-dark">
+                
+                <div class="form-group">
+                    <label class = "control-label col-md-2">Email</label>
+                    <div class="col-md-10">
+                       <input type="text" name="email" class="form-control form-control-small">
+                    </div>
+                </div>
         
-        <hr />
-        <div class="form-group">
-            <label class = "control-label col-md-2">Email</label>
-            <div class="col-md-10">
-               <input type="text" name="email" class="form-control form-control-small">
-            </div>
-        </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2">Name</label>
+                    <div class="col-md-10">
+                        <input type="text" name="name" class="form-control form-control-small">
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label class="control-label col-md-2">Phone</label>
+                    <div class="col-md-10">
+                        <input type="text" name="phone" class="form-control form-control-small">
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label class="control-label col-md-2">Address</label>
+                    <div class="col-md-10">
+                        <input  name="address" class="form-control form-control-small"></input>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label class="control-label col-md-2">Role</label>
+                    <div class="col-md-10">
+                        <select name="role" class="form-control form-control-small" id="role">
+                            <option value="" selected>Select</option>
+                            <option value="admin">Admin</option>
+                            <option value="seller">Seller</option>
+                            <option value="customer">Customer</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <label class="control-label col-md-2">Status</label>
+                    <div class="col-md-10">
+                        <select name="userStatus" class="form-control form-control-small" id="userStatus">
+                            <option value="" selected>Select</option>
+                            <option value="1">Enable</option>
+                            <option value="0">Disable</option>
+                        </select>
+                        
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2">Name</label>
-            <div class="col-md-10">
-                <input type="text" name="name" class="form-control form-control-small">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Phone</label>
-            <div class="col-md-10">
-                <input type="text" name="phone" class="form-control form-control-small">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Address</label>
-            <div class="col-md-10">
-                <input  name="address" class="form-control form-control-small"></input>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Role</label>
-            <div class="col-md-10">
-                <select name="role" class="form-control form-control-small" id="role">
-                    <option value="" selected>Select</option>
-                    <option value="admin">Admin</option>
-                    <option value="seller">Seller</option>
-                    <option value="customer">Customer</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Status</label>
-            <div class="col-md-10">
-                <select name="userStatus" class="form-control form-control-small" id="userStatus">
-                    <option value="" selected>Select</option>
-                    <option value="1">Enable</option>
-                    <option value="0">Disable</option>
-                </select>
+                    <br />
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="submitUpdateUserProfile" class="btn btn-primary">Save</button>
+                    </div>
                 
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <button id="submitUpdateUserProfile" class="btn btn-primary">Save</button>
-            </div>
-        </div>
     </div>
+</div>
+
 
 
 
     
-    <script type="text/javascript" src="../../js/admin/updateUserProfile.js"></script>
+<script type="text/javascript" src="../../js/admin/updateUserProfile.js"></script>
 
 

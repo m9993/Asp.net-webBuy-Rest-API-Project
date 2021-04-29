@@ -10,11 +10,17 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <title id="title"></title>
+    <style>
+        body{
+            background-color:#212121;
+            color:  white;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="../layout/_adminLayout.html">webBuy</a>
+        <a class="navbar-brand" href="../layout/_adminLayout.html"><b>webBuy</b></a>
 
         <!-- Navbar links -->
         <ul class="navbar-nav mr-auto">
@@ -27,12 +33,12 @@
     </nav>
 
     <div id="top"></div>
-    <button style="margin-top:80px; margin-left:10px;margin-right:10px;" class="bg-white text-primary border small" type="button" data-toggle="collapse" data-target="#sidemenu" id="sidemenu">
+    <button style="margin-top:80px; margin-left:10px;margin-right:10px;" class="bg-dark text-primary border small" type="button" data-toggle="collapse" data-target="#sidemenu" id="sidemenu">
         <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
     </button>
 
     <!-- Navbar links -->
-    <div style="background-color: #e6e6e68c;" class="collapse navbar-collapse m-2 p-3 border w-50" id="sidemenu">
+    <div style="background-color: #212121;" class="collapse navbar-collapse m-2 p-3 border w-50" id="sidemenu">
         <ul class="navbar-nav mr-auto">
         </ul>
         <ul class="navbar-nav">
@@ -44,20 +50,20 @@
                     <i class="fas fa-wrench"></i> Settings
                 </a>
                 <div class="collapse" id="collapseExample">
-                    <div class="card card-body p-2">
+                    <div class="card card-body p-2 border" style="background-color: #212121;">
                         <a data-toggle="modal" data-target="#ChangePassword" class="nav-link p-1" href="#"> <i class="fas fa-key"></i> Change Password</a>
-                        <a class="nav-link p-1" href="#" id="UpdateUserProfile"> <i class="fas fa-user-edit"></i> Profile</a>
+                        <a data-toggle="modal" data-target="#UpdateUserProfile" class="nav-link p-1" href="#" > <i class="fas fa-user-edit"></i> Profile</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item small">
-                <a class="nav-link p-1" href="/Admin/GetBannedUsers"><i class="fas fa-user-slash"></i> Banned Users <span class="badge badge-danger" id="bannedUsersNotification"></span></a>
+                <a class="nav-link p-1" href="#" id="GetBannedUsers"><i class="fas fa-user-slash"></i> Banned Users <span class="badge badge-danger" id="bannedUsersNotification"></span></a>
             </li>
             <li class="nav-item small">
-                <a class="nav-link p-1" href="/Admin/GetAllUsers"><i class="fas fa-users"></i> All Users</a>
+                <a class="nav-link p-1" href="#" id="GetAllUsers"><i class="fas fa-users"></i> All Users</a>
             </li>
             <li class="nav-item small">
-                <a class="nav-link p-1 ml-1" href="/Admin/GetAllProductReviews"><i class="fas fa-file-alt"></i> Product Reviews</a>
+                <a class="nav-link p-1 ml-1" href="#" id="GetAllProductReviews"><i class="fas fa-file-alt"></i> Product Reviews</a>
             </li>
             <li class="nav-item small">
                 <a class="nav-link p-1 ml-1" href="/Admin/PaymentMethods"><i class="fas fa-cash-register"></i> Payment Methods</a>
@@ -76,7 +82,7 @@
     
 
     <h4 class="" style="margin-left:4rem;">Admin Panel</h4>
-    <hr class="mb-4 mx-5" />
+    <hr class="mb-4 mx-5 border border-mute"/>
     <div class="container" id="body" style="margin-bottom: 6rem;">
 
         
@@ -97,13 +103,13 @@
     <div class="modal fade" id="ChangePassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-dark">
                     <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body bg-dark">
                     
                         <div class="form-group row">
                             <label for="Password" class="col-form-label ml-3 mt-2">Old Password</label>
@@ -133,6 +139,7 @@
         </div>
     </div>
     <!-- ChangePassword Modal -->
+    <div id="modalUpdateUserProfile"></div>
     <!--------------------------------------------- Modals --------------------------------------------->
 
 
