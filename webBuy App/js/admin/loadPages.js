@@ -32,6 +32,14 @@ $(document).ready(function(){
 			$("#title").html("Product Reviews");
 			$("#body").load("../admin/ProductReviews.html");
 		});
+		$("#PaymentMethods").click(()=>{
+			$("#title").html("Payment Methods");
+			$("#body").load("../admin/PaymentMethods.html");
+		});
+		$("#GetCategories").click(()=>{
+			$("#title").html("Categories");
+			$("#body").load("../admin/Categories.html");
+		});
 		
 
 		// $("#a").click(()=>{
@@ -40,4 +48,4 @@ $(document).ready(function(){
 		// });
 	}
 	
-})
+});

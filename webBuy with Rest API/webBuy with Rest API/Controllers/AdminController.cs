@@ -297,6 +297,20 @@ namespace webBuy_with_Rest_API.Controllers
             return Ok(rating);
         }
 
+
+        [Route("GetPaymentMethods"), HttpGet]
+        public IHttpActionResult GetPaymentMethods()
+        {
+            return Ok(paymentRepository.GetAll());
+        }
+
+
+        [Route("GetPaymentMethod/{paymentId}"), HttpGet]
+        public IHttpActionResult GetPaymentMethod(int paymentId)
+        {
+            return Ok(paymentRepository.Get(paymentId));
+        }
+
         [Route("PaymentMethodAdd"), HttpPost]
         public IHttpActionResult PaymentMethodAdd([FromBody]Payment payment)
         {
@@ -332,6 +346,21 @@ namespace webBuy_with_Rest_API.Controllers
             paymentRepository.Delete(id);
             return StatusCode(HttpStatusCode.OK);
         }
+
+
+        [Route("GetCategories"), HttpGet]
+        public IHttpActionResult GetCategories()
+        {
+            return Ok(categoryRepository.GetAll());
+        }
+
+
+        [Route("GetCategory/{categoryId}"), HttpGet]
+        public IHttpActionResult GetCategory(int categoryId)
+        {
+            return Ok(categoryRepository.Get(categoryId));
+        }
+
 
         [Route("CategoryAdd"), HttpPost]
         public IHttpActionResult CategoryAdd(Category category)
