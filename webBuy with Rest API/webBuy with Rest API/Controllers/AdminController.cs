@@ -392,6 +392,19 @@ namespace webBuy_with_Rest_API.Controllers
 
         }
 
+        [Route("GetShops"), HttpGet]
+        public IHttpActionResult GetShops()
+        {
+            return Ok(shopRepository.GetAll());
+        }
+
+
+        [Route("GetShop/{shopId}"), HttpGet]
+        public IHttpActionResult GetShop(int shopId)
+        {
+            return Ok(shopRepository.Get(shopId));
+        }
+
         [Route("ShopUpdate"), HttpPut]
         public IHttpActionResult ShopUpdate(Shop shop)
         {
@@ -409,7 +422,12 @@ namespace webBuy_with_Rest_API.Controllers
             }
 
         }
-    
-    
+
+        [Route("GetProducts"), HttpGet]
+        public IHttpActionResult GetProducts()
+        {
+            return Ok(productRepository.GetAll());
+        }
+
     }
 }

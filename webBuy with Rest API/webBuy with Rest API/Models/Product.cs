@@ -2,7 +2,7 @@ namespace webBuy_with_Rest_API.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Product
     {
         public int productId { get; set; }
@@ -14,5 +14,6 @@ namespace webBuy_with_Rest_API.Models
         public string image { get; set; }
         public Nullable<int> productStatus { get; set; }
         public int categoryId { get; set; }
+
     }
 }

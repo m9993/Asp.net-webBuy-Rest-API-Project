@@ -1,59 +1,35 @@
-﻿@model IEnumerable<webBuy.Models.Shop>
-
-@{
-    ViewBag.Title = "AllShops";
-    Layout = "~/Views/Shared/_adminLayout.cshtml";
-}
-
-<h5>All Shops</h5>
+﻿<h5>All Shops</h5>
 
 <p>
 
 </p>
-<table class="table">
+
+<table class="table table-hover table-dark">
+    <thead class="">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+            Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
+            Email
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.shopStatus)
+            Status
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.balance)
+            Balance
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.setComission)
+            Comission
         </th>
-        <th></th>
+        <th>Action</th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.shopStatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.balance)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.setComission)
-            </td>
-            <td>
-                <a class="text-warning px-2" data-toggle="modal" data-target="#@("shopUpdate"+item.shopId)" href=""><i class="fas fa-edit"></i></a>
-                <a class="px-2" href="/Admin/ShopProducts/@item.shopId">View Products</a>
-            </td>
-        </tr>
-    }
+    </thead>
+
+    <tbody id="tbody">
+
+    </tbody>
 
 </table>
 
@@ -61,32 +37,29 @@
 
 
 <!--------------------------------------------- Modals --------------------------------------------->
-<!-- ShopUpdate Modal -->
-@foreach (var item in Model)
-{
-<div class="modal fade" id="@("shopUpdate"+item.shopId)" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- ShopEdit  Modal-->
+<div class="modal fade" id="ShopEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Shop Update</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header bg-dark">
+                <h5 class="modal-title" id="exampleModalLabel">Shop Edit</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form method="post" action="/Admin/ShopUpdate/@item.shopId">
+            <div class="modal-body bg-dark">
                     <div class="form-group">
                         <label for="comission" class="col-form-label ml-3 mt-2">Comission</label>
                         <div class="col-sm-10">
-                            <input name="setComission" value="@item.setComission" type="" class="form-control" id="comission">
+                            <input name="setComission" type="" class="form-control" id="setComission">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="shopStatus" class="col-form-label ml-3 mt-2">Shop Status</label>
+                        <label for="shopStatus" class="col-form-label ml-3 mt-2">Status</label>
                         <div  class="col-sm-10">
                             <select name="shopStatus" class="form-control" id="shopStatus">
-                                <option value="0" @if (item.shopStatus == 0) { <text> selected</text>}>Ban</option>
-                                <option value="1" @if (item.shopStatus == 1) { <text> selected</text>}>UnBan</option>
+                                <option value="0">Ban</option>
+                                <option value="1">UnBan</option>
                             </select>
                         </div>
                     </div>
@@ -94,12 +67,14 @@
                         <br />
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button id="submitShopEdit" class="btn btn-primary">Save changes</button>
                         </div>
-                </form>
             </div>
         </div>
     </div>
 </div>
-}
-<!-- CategoryAdd Modal -->
+<!-- ShopEdit Modal -->
+<!--------------------------------------------- Modals --------------------------------------------->
+
+
+<script type="text/javascript" src="../../js/admin/allShops.js"></script>

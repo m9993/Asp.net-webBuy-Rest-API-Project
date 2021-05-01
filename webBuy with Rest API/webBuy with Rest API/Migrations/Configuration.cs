@@ -78,11 +78,11 @@
             //Order
             List<Order> orders = new List<Order>()
             {
-                new Order(){total=6700, paymentId=1, date="19-Apr-21 10:15:47 PM"},
-                new Order(){total=3850, paymentId=1, date="20-Apr-21 10:15:47 PM"},
-                new Order(){total=1450, paymentId=1, date="21-Apr-21 11:15:47 PM"},
-                new Order(){total=500, paymentId=1, date="22-Apr-21 12:05:01 PM"},
-                new Order(){total=950, paymentId=1, date="23-Apr-21 5:05:01 PM"},
+                new Order(){total=6700, paymentId=1, date="26-Apr-21 10:15:47 PM"},
+                new Order(){total=3850, paymentId=1, date="27-Apr-21 10:15:47 PM"},
+                new Order(){total=1450, paymentId=1, date="28-Apr-21 11:15:47 PM"},
+                new Order(){total=500, paymentId=1, date="29-Apr-21 12:05:01 PM"},
+                new Order(){total=950, paymentId=1, date="01-May-21 5:05:01 PM"},
             };
             if (!context.Orders.Any())
             {

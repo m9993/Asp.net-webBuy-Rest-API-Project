@@ -15,12 +15,15 @@
             background-color:#212121;
             color:  white;
         }
+        #siteSummary .card:hover, #productCart .card:hover{
+            box-shadow: 0px 0px 8px #5bc0de;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="../layout/_adminLayout.html"><b>webBuy</b></a>
+        <a class="navbar-brand" href="../layout/_adminLayout.html"><b>web<span class="text-info">Buy</span></b></a>
 
         <!-- Navbar links -->
         <ul class="navbar-nav mr-auto">
@@ -33,7 +36,7 @@
     </nav>
 
     <div id="top"></div>
-    <button style="margin-top:80px; margin-left:10px;margin-right:10px;" class="bg-dark text-primary border small" type="button" data-toggle="collapse" data-target="#sidemenu" id="sidemenu">
+    <button style="margin-top:80px; margin-left:10px;margin-right:10px;" class="bg-dark text-secondary border border-secondary small" type="button" data-toggle="collapse" data-target="#sidemenu" id="sideMenuButton">
         <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
     </button>
 
@@ -50,7 +53,7 @@
                     <i class="fas fa-wrench"></i> Settings
                 </a>
                 <div class="collapse" id="collapseExample">
-                    <div class="card card-body p-2 border" style="background-color: #212121;">
+                    <div class="card card-body p-2 border border-secondary" style="background-color: #212121;">
                         <a data-toggle="modal" data-target="#ChangePassword" class="nav-link p-1" href="#"> <i class="fas fa-key"></i> Change Password</a>
                         <a data-toggle="modal" data-target="#UpdateUserProfile" class="nav-link p-1" href="#" > <i class="fas fa-user-edit"></i> Profile</a>
                     </div>
@@ -72,7 +75,7 @@
                 <a class="nav-link p-1 ml-1" href="#" id="GetCategories"><i class="fas fa-list"></i> Categories</a>
             </li>
             <li class="nav-item small">
-                <a class="nav-link p-1 ml-1" href="/Admin/AllShops"><i class="fas fa-store"></i> Shops</a>
+                <a class="nav-link p-1 ml-1" href="#" id="AllShops"><i class="fas fa-store"></i> Shops</a>
             </li>
         </ul>
     </div>
@@ -82,13 +85,13 @@
     
 
     <h4 class="" style="margin-left:4rem;">Admin Panel</h4>
-    <hr class="mb-4 mx-5 border border-mute"/>
+    <hr class="mt-0 mb-4 mx-5 border-1 border-info"/>
     <div class="container" id="body" style="margin-bottom: 6rem;">
 
         
     </div>
     
-    <footer class="py-1 bg-dark text-white text-center">
+    <footer class="py-1 bg-dark text-white text-center fixed-bottom">
         <div class="container my-2">
             <span class="text-muted">&copy; <span id="year"></span> - webBuy</span>
             <button class="float-right bg-dark border border-secondary"><a class="text-muted h5" href="#top"><i class="fas fa-chevron-up"></i></a></button>

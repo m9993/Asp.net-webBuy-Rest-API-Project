@@ -15,6 +15,7 @@ $(document).ready(function(){
 		// 	$("#body").load("../admin/UpdateUserProfile.html");
 		// });
 		$("#GetBannedUsers").click(()=>{
+			$('#sideMenuButton').click();
 			$("#title").html("Banned Users");
 			$("#body").load("../admin/Users.html");
 			$('<script>').attr({
@@ -22,6 +23,7 @@ $(document).ready(function(){
 				type: 'text/javascript'}).appendTo('body');
 		});
 		$("#GetAllUsers").click(()=>{
+			$('#sideMenuButton').click();
 			$("#title").html("All Users");
 			$("#body").load("../admin/Users.html");
 			$('<script>').attr({
@@ -29,16 +31,24 @@ $(document).ready(function(){
 				type: 'text/javascript'}).appendTo('body');
 		});
 		$("#GetAllProductReviews").click(()=>{
+			$('#sideMenuButton').click();
 			$("#title").html("Product Reviews");
 			$("#body").load("../admin/ProductReviews.html");
 		});
 		$("#PaymentMethods").click(()=>{
+			$('#sideMenuButton').click();
 			$("#title").html("Payment Methods");
 			$("#body").load("../admin/PaymentMethods.html");
 		});
 		$("#GetCategories").click(()=>{
+			$('#sideMenuButton').click();
 			$("#title").html("Categories");
 			$("#body").load("../admin/Categories.html");
+		});
+		$("#AllShops").click(()=>{
+			$('#sideMenuButton').click();
+			$("#title").html("All Shops");
+			$("#body").load("../admin/AllShops.html");
 		});
 		
 
