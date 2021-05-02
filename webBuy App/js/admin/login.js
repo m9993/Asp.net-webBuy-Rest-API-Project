@@ -26,8 +26,8 @@ $(document).ready(()=>{
                 }
                 else
                 {
-                    $("#error-msg").addClass("alert-danger");
-                    $("#error-msg").html(xmlHttp.status+":"+xmlHttp.statusText);
+                    $("#login-err").addClass("mb-3");
+                    $("#login-err").html(xmlHttp.status+":"+xmlHttp.statusText);
                 }
             }
         });    

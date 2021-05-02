@@ -429,5 +429,47 @@ namespace webBuy_with_Rest_API.Controllers
             return Ok(productRepository.GetAll());
         }
 
+
+        [Route("GetAllcategoryProductShopWithAverageRatingView"), HttpGet]
+        public IHttpActionResult GetAllcategoryProductShopWithAverageRatingView()
+        {
+            var allProducts = productRepository.GetAll();
+            List<ReviewProductShopView> allcategoryProductShopWithAverageRatingView = new List<ReviewProductShopView>();
+            foreach ( var productDetails in allProducts) {
+                ReviewProductShopView categoryProductShopView = new ReviewProductShopView();
+                categoryProductShopView.ProductId = productDetails.productId;
+                categoryProductShopView.ProductName = productDetails.name;
+                categoryProductShopView.UnitPrice = (double)productDetails.unitPrice;
+                categoryProductShopView.Quantity = (int)productDetails.quantity;
+                categoryProductShopView.ProductStatus = (int)productDetails.productStatus;
+                categoryProductShopView.ProductImage = productDetails.image;
+                categoryProductShopView.ProductAddedDate = productDetails.date;
+
+                var categoryDetails = categoryRepository.Get((int)productDetails.categoryId);
+                categoryProductShopView.CategoryName = categoryDetails.name;
+
+                var shopDetails = shopRepository.Get((int)productDetails.shopId);
+                categoryProductShopView.ShopName = shopDetails.name;
+
+                //avg rating
+                int totalRating=0 ;
+                int count = 0;
+                var reviewDetails = reviewRepository.GetProductReviews(productDetails.productId);
+                foreach (var item in reviewDetails) {
+                    count++;
+                    totalRating += Convert.ToInt32(item.rating);
+                }
+                double avgRating;
+                if (reviewDetails.Any()) { avgRating = (totalRating / count); }
+                else { avgRating = 0; }
+                
+                categoryProductShopView.Rating = Convert.ToInt32(Math.Ceiling(avgRating));
+                //avg rating
+
+                allcategoryProductShopWithAverageRatingView.Add(categoryProductShopView);
+            }
+
+            return Ok(allcategoryProductShopWithAverageRatingView);
+        }
     }
 }

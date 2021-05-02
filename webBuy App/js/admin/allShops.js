@@ -119,7 +119,7 @@ function viewShopProducts(id){
                 var products=xmlHttp.responseJSON;
                 str='';
                 products.forEach ((item)=>{
-                    if(item.productId==id){
+                    if(item.shopId==id){
                         var productStatus='';
                         if(item.productStatus==1){
                             productStatus='Available';
@@ -127,8 +127,8 @@ function viewShopProducts(id){
                         else{
                             productStatus='Not available';
                         }
-                        var data="<div class='card bg-dark m-2' style='width: 16rem;'>"+
-                        "<img class='card-img-top mt-3 col-md-6' src='/webBuy App/src/products/"+item.image+"' alt='Card image cap'>"+
+                        var data="<div class='card bg-dark m-4' style='width: 16rem;'>"+
+                        "<img class='card-img-top m-3 mb-0 w-50' src='/webBuy App/src/products/"+item.image+"' alt='Card image cap'>"+
                         "<div class='card-body'>"+
                             "<h5 class='card-title'>"+item.name+"</h5>"+
                             "<p class='card-text  my-0 py-0'><b>Price: </b> "+item.unitPrice+" $</p>"+

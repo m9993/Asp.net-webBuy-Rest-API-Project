@@ -113,10 +113,16 @@
             //Product
             List<Product> products = new List<Product>()
             {
-                new Product(){name="Perfume 5b", shopId=1, unitPrice=1400, quantity=20, date="10-Mar-21 10:15:47 PM", image="1.jpg", productStatus=0, categoryId=1},
-                new Product(){name="Hand Watch 1c", shopId=2, unitPrice=450, quantity=25, date="10-Mar-21 10:15:47 PM", image="2.jpg", productStatus=1, categoryId=2},
-                new Product(){name="HeadPhone 1e", shopId=3, unitPrice=900, quantity=9, date="10-Mar-21 10:15:47 PM", image="3.jpg", productStatus=1, categoryId=3},
-                new Product(){name="Rubics (red)", shopId=4, unitPrice=200, quantity=21, date="10-Mar-21 10:15:47 PM", image="4.jpg", productStatus=1, categoryId=4},
+                new Product(){name="Perfume 5b", shopId=1, unitPrice=1400, quantity=20, date="10-Mar-21 09:15:47 PM", image="1.jpg", productStatus=0, categoryId=1},
+                new Product(){name="Hand Watch 1c", shopId=2, unitPrice=450, quantity=25, date="15-Mar-21 10:15:47 PM", image="2.jpg", productStatus=1, categoryId=2},
+                new Product(){name="HeadPhone 1e", shopId=3, unitPrice=900, quantity=9, date="19-Mar-21 11:12:47 PM", image="3.jpg", productStatus=1, categoryId=3},
+                new Product(){name="Rubics (red)", shopId=4, unitPrice=200, quantity=21, date="20-Mar-21 11:16:47 PM", image="4.jpg", productStatus=1, categoryId=4},
+                new Product(){name="Black Opium", shopId=1, unitPrice=3000, quantity=8, date="21-Mar-21 12:15:47 PM", image="5.jpg", productStatus=1, categoryId=1},
+                new Product(){name="Hypnotic Poison", shopId=1, unitPrice=5000, quantity=5, date="22-Mar-21 05:15:47 PM", image="6.jpg", productStatus=1, categoryId=1},
+                new Product(){name="N5", shopId=1, unitPrice=2000, quantity=50, date="25-Mar-21 06:15:47 PM", image="7.jpg", productStatus=1, categoryId=1},
+                new Product(){name="Ride On Car Battery Jeep WN-206", shopId=4, unitPrice=350, quantity=11, date="26-Mar-21 12:16:47 PM", image="8.jpg", productStatus=1, categoryId=4},
+                new Product(){name="Children Goggles Retro Anti-UV400", shopId=2, unitPrice=750, quantity=27, date="27-Mar-21 01:15:47 PM", image="9.jpg", productStatus=1, categoryId=2},
+                new Product(){name="Reusable Fabric Face Mask", shopId=2, unitPrice=100, quantity=71, date="30-Mar-21 02:14:48 PM", image="10.jpg", productStatus=1, categoryId=2},
             };
             if (!context.Products.Any())
             {
@@ -167,8 +173,8 @@
             List<Shop> shops = new List<Shop>()
             {
                 new Shop(){name="Perfume Shop", email="perfume01@gmail.com", shopStatus=1, balance=222, setComission=20},
-                new Shop(){name="Watch Shop", email="watchsh1@gmail.com", shopStatus=1, balance=33, setComission=8},
-                new Shop(){name="Accessories Shop", email="accessories1@gmail.com", shopStatus=1, balance=3323, setComission=20},
+                new Shop(){name="Accessories Shop", email="accessories1@gmail.com", shopStatus=1, balance=33, setComission=8},
+                new Shop(){name="Gadget Shop", email="gadget1@gmail.com", shopStatus=1, balance=3323, setComission=20},
                 new Shop(){name="Toy Shop", email="toy1@gmail.com", shopStatus=1, balance=221, setComission=5},
             };
             if (!context.Shops.Any())
