@@ -12,5 +12,13 @@ namespace webBuy_with_Rest_API.Repositories
         {
             return this.context.Products.Where(e => e.shopId == id).ToList();
         }
+        public List<Product> SerachProduct(string searchKey)
+        {
+            return this.context.Products.Where(s => s.name.Contains(searchKey)).ToList();
+        }
+        public List<Product> GetLastAddedProducts()
+        {
+            return this.context.Products.OrderByDescending(o => o.date).ToList();
+        }
     }
 }
