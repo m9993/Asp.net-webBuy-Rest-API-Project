@@ -29,10 +29,10 @@ __Snapshots of Admin panel__
 > Ban-unban all users
 ![Image](./project-images/ban-unban-users.png)
 
-> Reviews of each Product
+> All reviews 
 ![Image](./project-images/product-reviews.png)
 
-> Review chart
+> Review chart for each product
 ![Image](./project-images/review-chart.png)
 
 > Shops
