@@ -1,10 +1,12 @@
 # webBuy
 E-commerce with Rest API & an App <br />
 <ul>
-<li>Rest API and</li>
+<li>Rest API</li>
 <li>Entity Framework</li>
 <li>Code First Approach</li>
 <li>App (jQuery, Bootstrap-4.6, Basic javascript & CSS, HTML)</li>
+<li>App with single page application & layout (manually)/li>
+<li>App is used ajax for all types of action/li>
 </ul
   
 __Snapshots of Admin panel__
@@ -27,13 +29,13 @@ __Snapshots of Admin panel__
 > Ban-unban all users
 ![Image](./project-images/ban-unban-users.png)
 
-> Product reviews
+> Reviews of each Product
 ![Image](./project-images/product-reviews.png)
 
 > Review chart
 ![Image](./project-images/review-chart.png)
 
-> Shop
+> Shops
 ![Image](./project-images/shop-edit.png)
 
 > Specific shop products
