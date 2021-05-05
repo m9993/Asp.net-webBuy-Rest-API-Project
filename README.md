@@ -5,8 +5,8 @@ E-commerce with Rest API & an App <br />
 <li>Entity Framework</li>
 <li>Code First Approach</li>
 <li>App (jQuery, Bootstrap-4.6, Basic javascript & CSS, HTML)</li>
-<li>App with single page application & layout (manually)/li>
-<li>App is used ajax for all types of action/li>
+<li>App with single page application & layout (manually)</li>
+<li>App is used ajax for all types of action</li>
 </ul
   
 __Snapshots of Admin panel__
